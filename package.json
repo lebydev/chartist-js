@@ -4,13 +4,13 @@
   "description": "Simple, responsive charts",
   "version": "0.11.0",
   "author": "Gion Kunz",
-  "homepage": "https://gionkunz.github.io/chartist-js",
+  "homepage": "https://github.com/lebydev/chartist-js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gionkunz/chartist-js.git"
+    "url": "https://github.com/lebydev/chartist-js"
   },
   "bugs": {
-    "url": "https://github.com/gionkunz/chartist-js/issues"
+    "url": "https://github.com/lebydev/chartist-js"
   },
   "keywords": [
     "chartist",
