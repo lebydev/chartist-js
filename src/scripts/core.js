@@ -852,6 +852,10 @@ var Chartist = {
     width = Math.max(width, yAxisOffset + normalizedPadding.left + normalizedPadding.right);
     height = Math.max(height, xAxisOffset + normalizedPadding.top + normalizedPadding.bottom);
 
+    // Set view box for created SVG based on calculated width and height. Helps a lot with proper resizing of charts
+    // for print media in IE and Firefox
+    svg.setViewBox(0, 0, width, height);
+
     var chartRect = {
       padding: normalizedPadding,
       width: function () {

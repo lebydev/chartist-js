@@ -159,6 +159,22 @@
   }
 
   /**
+   * Sets viewBox attribute for SVG node for the current element.
+   *
+   * @memberof Chartist.Svg
+   * @param {Number} x X coordinate of top left corner of the view box
+   * @param {Number} y Y coordinate of top left corner of the view box
+   * @param {Number} width Width of the view box
+   * @param {Number} height Height of the view box
+   * @return {Object|String} The current wrapper object will be returned so it can be used for chaining or the attribute value if used as getter function.
+   */
+  function setViewBox(x, y, width, height) {
+    this._node.setAttribute('viewBox', x + ' ' + y + ' ' + width + ' ' + height);
+
+    return this._node;
+  }
+
+  /**
    * This method creates a foreignObject (see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject) that allows to embed HTML content into a SVG graphic. With the help of foreignObjects you can enable the usage of regular HTML elements inside of SVG where they are subject for SVG positioning and transformation but the Browser will use the HTML rendering capabilities for the containing DOM.
    *
    * @memberof Chartist.Svg
