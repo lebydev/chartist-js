@@ -15,7 +15,7 @@
 }(this, function () {
 
 /* Chartist.js 0.11.0
- * Copyright © 2017 Gion Kunz
+ * Copyright © 2018 Gion Kunz
  * Free to use under either the WTFPL license or the MIT license.
  * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL
  * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
@@ -873,6 +873,10 @@ var Chartist = {
     // If settings were to small to cope with offset (legacy) and padding, we'll adjust
     width = Math.max(width, yAxisOffset + normalizedPadding.left + normalizedPadding.right);
     height = Math.max(height, xAxisOffset + normalizedPadding.top + normalizedPadding.bottom);
+
+    // Set view box for created SVG based on calculated width and height. Helps a lot with proper resizing of charts
+    // for print media in IE and Firefox
+    svg.setViewBox(0, 0, width, height);
 
     var chartRect = {
       padding: normalizedPadding,
@@ -2149,6 +2153,22 @@ var Chartist = {
    * @returns {Node}
    */
   function getNode() {
+    return this._node;
+  }
+
+  /**
+   * Sets viewBox attribute for SVG node for the current element.
+   *
+   * @memberof Chartist.Svg
+   * @param {Number} x X coordinate of top left corner of the view box
+   * @param {Number} y Y coordinate of top left corner of the view box
+   * @param {Number} width Width of the view box
+   * @param {Number} height Height of the view box
+   * @return {Object|String} The current wrapper object will be returned so it can be used for chaining or the attribute value if used as getter function.
+   */
+  function setViewBox(x, y, width, height) {
+    this._node.setAttribute('viewBox', x + ' ' + y + ' ' + width + ' ' + height);
+
     return this._node;
   }
 
