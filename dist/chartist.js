@@ -2510,6 +2510,7 @@ var Chartist = {
     querySelector: querySelector,
     querySelectorAll: querySelectorAll,
     getNode: getNode,
+    setViewBox: setViewBox,
     foreignObject: foreignObject,
     text: text,
     empty: empty,
